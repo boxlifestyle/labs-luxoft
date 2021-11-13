@@ -2,12 +2,15 @@ package com.bykov.customstarter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class CustomstarterApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CustomstarterApplication.class, args);
+
+		ApplicationContext ctx = SpringApplication.run(CustomstarterApplication.class, args);
+		((TestBean)ctx.getBean("testBean")).testHelloStarter();
 	}
 
 }
